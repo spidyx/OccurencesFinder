@@ -1,3 +1,5 @@
+using System.Net.Mime;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 WebApplication app = builder.Build();
 
@@ -15,6 +17,6 @@ app.MapGet(
         "<p>This is the second paragraph.</p>" +
         "</body>" +
         "</html>",
-        "text/html"));
+        MediaTypeNames.Text.Html));
 
 app.Run();
