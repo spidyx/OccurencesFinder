@@ -1,6 +1,6 @@
 ﻿namespace OccurrencesFinder.Core;
 
-public class HttpLoader
+public class HttpLoader : IHttpLoader
 {
     private readonly HttpClient client;
     
