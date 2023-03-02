@@ -70,22 +70,8 @@ public class Application
         await output.WriteLineAsync($"We found {count} times the word {word}.");
 
         await output.WriteLineAsync("Do you want to save it ? (y/n)");
-        
-        bool? shouldSave = null;
 
-        do
-        {
-            string? shouldSaveInput = await input.ReadLineAsync();
-            shouldSave = shouldSaveInput switch
-            {
-                "y" => true,
-                "n" => false,
-                _ => null
-            };
-        } while (!shouldSave.HasValue);
-
-        if (shouldSave.Value)
-            await saveCountingRecord.Execute(word, count);
+        await SaveCount(word, count);
     }
 
     private async Task<Uri> GetInputForUri()
@@ -123,6 +109,32 @@ public class Application
         } while (word == null);
 
         return word;
+    }
+
+    private async Task SaveCount(string word, int count)
+    {
+        bool shouldSave = await GetUserChoice();
+
+        if (shouldSave)
+            await saveCountingRecord.Execute(word, count);
+    }
+
+    private async Task<bool> GetUserChoice()
+    {
+        bool? shouldSave = null;
+
+        do
+        {
+            string? shouldSaveInput = await input.ReadLineAsync();
+            shouldSave = shouldSaveInput switch
+            {
+                "y" => true,
+                "n" => false,
+                _ => null
+            };
+        } while (!shouldSave.HasValue);
+
+        return shouldSave.Value;
     }
 
     private async Task DisplaySavedResults()
