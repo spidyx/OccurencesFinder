@@ -1,18 +1,25 @@
 ﻿using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+using OccurrencesFinder.Application.UseCases.SaveCountingRecords;
 
 namespace OccurrencesFinder.Console;
 
 public class Application
 {
     private readonly ICountWordOccurrences countWordOccurrences;
+    private readonly ISaveCountingRecord saveCountingRecord;
     private readonly TextReader input;
     private readonly TextWriter output;
 
-    public Application(TextReader input, TextWriter output, ICountWordOccurrences countWordOccurrences)
+    public Application(
+        TextReader input,
+        TextWriter output,
+        ICountWordOccurrences countWordOccurrences,
+        ISaveCountingRecord saveCountingRecord)
     {
         this.input = input;
         this.output = output;
         this.countWordOccurrences = countWordOccurrences;
+        this.saveCountingRecord = saveCountingRecord;
     }
 
     public async Task Run()
@@ -60,7 +67,25 @@ public class Application
 
         int count = await countWordOccurrences.Execute(word, uri);
 
-        await output.WriteAsync(count.ToString());
+        await output.WriteLineAsync($"We found {count} times the word {word}.");
+
+        await output.WriteLineAsync("Do you want to save it ? (y/n)");
+        
+        bool? shouldSave = null;
+
+        do
+        {
+            string? shouldSaveInput = await input.ReadLineAsync();
+            shouldSave = shouldSaveInput switch
+            {
+                "y" => true,
+                "n" => false,
+                _ => null
+            };
+        } while (!shouldSave.HasValue);
+
+        if (shouldSave.Value)
+            await saveCountingRecord.Execute(word, count);
     }
 
     private async Task<Uri> GetInputForUri()

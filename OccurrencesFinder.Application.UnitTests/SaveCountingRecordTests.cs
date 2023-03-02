@@ -1,5 +1,5 @@
 ﻿using OccurrencesFinder.Application.Interfaces;
-using OccurrencesFinder.Application.UseCases;
+using OccurrencesFinder.Application.UseCases.SaveCountingRecords;
 using OccurrencesFinder.Domain;
 
 namespace OccurrencesFinder.Application.UnitTests;

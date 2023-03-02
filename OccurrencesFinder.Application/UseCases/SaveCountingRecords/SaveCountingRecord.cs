@@ -1,9 +1,9 @@
 ﻿using OccurrencesFinder.Application.Interfaces;
 using OccurrencesFinder.Domain;
 
-namespace OccurrencesFinder.Application.UseCases;
+namespace OccurrencesFinder.Application.UseCases.SaveCountingRecords;
 
-public class SaveCountingRecord
+public class SaveCountingRecord : ISaveCountingRecord
 {
     private readonly IDateTimeProvider dateTimeProvider;
     private readonly IRecordsRepository recordsRepository;
