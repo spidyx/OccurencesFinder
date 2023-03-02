@@ -7,10 +7,11 @@ namespace OccurrencesFinder.Console.UnitTests;
 
 public class ApplicationTest
 {
-    private const string WORD = "foo";
-    private const string URI = "http://non-existent.local";
-        
-    [Fact]
+    private const string MenuEntryToStartCountWordOccurrences = "1";
+    private const string Word = "foo";
+    private const string Uri = "http://non-existent.local";
+
+    [Fact()]
     public async Task Application_FindOccurrencesCount()
     {
         // Arrange
@@ -18,16 +19,17 @@ public class ApplicationTest
         countWordOccurrencesMock
             .Setup(c => 
                 c.Execute(
-                    It.Is<string>(w => w == WORD), 
-                    It.Is<Uri>(uri => uri == new Uri(URI))))
+                    It.Is<string>(w => w == Word), 
+                    It.Is<Uri>(uri => uri == new Uri(Uri))))
             .ReturnsAsync(42);
 
         await using StringWriter outputWriter = new StringWriter();
         using StringReader input = new StringReader(
             new StringBuilder().AppendJoin(
                     Environment.NewLine,
-                    URI,
-                    WORD)
+                    MenuEntryToStartCountWordOccurrences,
+                    Uri,
+                    Word)
                 .ToString());
 
         Application application = new(input, outputWriter, countWordOccurrencesMock.Object);
@@ -37,7 +39,7 @@ public class ApplicationTest
 
         // Assert
         string[] outputs = outputWriter.GetStringBuilder().ToString().Split(Environment.NewLine);
-        outputs[3].Should().Be("42");
+        outputs[8].Should().Be("42");
         input.Peek().Should().Be(-1, "because all input must have been read");
     }
 }
