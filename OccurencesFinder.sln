@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Integrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console", "OccurrencesFinder.Console\OccurrencesFinder.Console.csproj", "{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console.UnitTest", "OccurrencesFinder.Console.UnitTest\OccurrencesFinder.Console.UnitTest.csproj", "{3E8CB816-F90E-456B-9DE2-D329B5638AAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console.UnitTests", "OccurrencesFinder.Console.UnitTests\OccurrencesFinder.Console.UnitTests.csproj", "{3E8CB816-F90E-456B-9DE2-D329B5638AAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Infrastructure", "OccurrencesFinder.Infrastructure\OccurrencesFinder.Infrastructure.csproj", "{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}"
 EndProject

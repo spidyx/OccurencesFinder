@@ -3,7 +3,7 @@ using FluentAssertions;
 using Moq;
 using OccurrencesFinder.Application.UseCases.CountWordUseCase;
 
-namespace OccurrencesFinder.Console.UnitTest;
+namespace OccurrencesFinder.Console.UnitTests;
 
 public class ApplicationTest
 {
