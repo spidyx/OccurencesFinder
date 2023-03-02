@@ -1,11 +1,14 @@
 ﻿using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+using OccurrencesFinder.Application.UseCases.ListCountingRecordsUseCase;
 using OccurrencesFinder.Application.UseCases.SaveCountingRecords;
+using OccurrencesFinder.Domain;
 
 namespace OccurrencesFinder.Console;
 
 public class Application
 {
     private readonly ICountWordOccurrences countWordOccurrences;
+    private readonly IListCountingRecords listCountingRecords;
     private readonly ISaveCountingRecord saveCountingRecord;
     private readonly TextReader input;
     private readonly TextWriter output;
@@ -14,11 +17,13 @@ public class Application
         TextReader input,
         TextWriter output,
         ICountWordOccurrences countWordOccurrences,
+        IListCountingRecords listCountingRecords,
         ISaveCountingRecord saveCountingRecord)
     {
         this.input = input;
         this.output = output;
         this.countWordOccurrences = countWordOccurrences;
+        this.listCountingRecords = listCountingRecords;
         this.saveCountingRecord = saveCountingRecord;
     }
 
@@ -38,7 +43,7 @@ public class Application
         {
             await output.WriteLineAsync("What do you want to do ?");
             await output.WriteLineAsync("1 - Count Occurrences of a webpage");
-            await output.WriteLineAsync("2 - Show saved requests");
+            await output.WriteLineAsync("2 - Show saved records");
             await output.WriteLineAsync();
             await output.WriteAsync("Write your choice : ");
 
@@ -139,8 +144,13 @@ public class Application
 
     private async Task DisplaySavedResults()
     {
-        await output.WriteLineAsync();
-        await output.WriteLineAsync("This is under development");
-        await output.WriteLineAsync();
+        await output.WriteLineAsync("The following records have been saved :");
+
+        IEnumerable<CountWordRecord> records = await listCountingRecords.Execute();
+        foreach (CountWordRecord record in records)
+        {
+            await output.WriteLineAsync(
+                $"{record.DateTime.ToLocalTime().ToShortTimeString()} - The word {record.Word} have been found {record.Count}.");
+        }
     }
 }

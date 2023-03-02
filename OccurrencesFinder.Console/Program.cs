@@ -3,6 +3,7 @@ using OccurrencesFinder.Application;
 using OccurrencesFinder.Console;
 using OccurrencesFinder.Application.Interfaces;
 using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+using OccurrencesFinder.Application.UseCases.ListCountingRecordsUseCase;
 using OccurrencesFinder.Application.UseCases.SaveCountingRecords;
 using OccurrencesFinder.Infrastructure;
 
@@ -15,6 +16,7 @@ await using ServiceProvider serviceProvider = new ServiceCollection()
     .AddTransient<IHttpLoader, HttpLoader>()
     .AddTransient<IRecordsRepository>(_ => new LocalFileRecordsRepository(filePath))
     .AddTransient<ICountWordOccurrences, CountWordOccurrences>()
+    .AddTransient<IListCountingRecords, ListCountingRecords>()
     .AddTransient<ISaveCountingRecord, SaveCountingRecord>()
     .AddTransient<TextReader>(_ => Console.In)
     .AddTransient<TextWriter>(_ => Console.Out)

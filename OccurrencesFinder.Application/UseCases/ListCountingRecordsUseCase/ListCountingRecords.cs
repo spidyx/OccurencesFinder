@@ -3,7 +3,7 @@ using OccurrencesFinder.Domain;
 
 namespace OccurrencesFinder.Application.UseCases.ListCountingRecordsUseCase;
 
-public class ListCountingRecords
+public class ListCountingRecords : IListCountingRecords
 {
     private readonly IRecordsRepository repository;
 

@@ -19,8 +19,18 @@ public class LocalFileRecordsRepository : IRecordsRepository
         await File.AppendAllLinesAsync(localFilePath, new []{json});
     }
 
-    public Task<IEnumerable<CountWordRecord>> GetRecords()
+    public async Task<IEnumerable<CountWordRecord>> GetRecords()
     {
-        throw new NotImplementedException();
+        List<CountWordRecord> records = new();
+        await using FileStream fileStream = File.OpenRead(localFilePath);
+        using var streamReader = new StreamReader(fileStream);
+
+        while (await streamReader.ReadLineAsync() is { } line)
+        {
+            var record = JsonSerializer.Deserialize<CountWordRecord>(line);
+            if (record != null) records.Add(record);
+        }
+
+        return records;
     }
 }

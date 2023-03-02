@@ -1,6 +1,6 @@
 using System.Text;
-using OccurrencesFinder.Application.Interfaces;
 using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+using OccurrencesFinder.Application.UseCases.ListCountingRecordsUseCase;
 using OccurrencesFinder.Application.UseCases.SaveCountingRecords;
 
 namespace OccurrencesFinder.Console.UnitTests;
@@ -39,7 +39,8 @@ public class ApplicationTest
             input,
             outputWriter,
             countWordOccurrencesMock.Object,
-            Mock.Of<ISaveCountingRecord>());
+            Mock.Of<IListCountingRecords>(),
+        Mock.Of<ISaveCountingRecord>());
 
         // Act
         await application.Run();
