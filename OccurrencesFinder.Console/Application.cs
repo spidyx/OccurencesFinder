@@ -17,8 +17,37 @@ public class Application
 
     public async Task Run()
     {
-        await output.WriteLineAsync("Welcome to the Occurrences Finder Program");
-        await FindOccurrences();
+        await output.WriteLineAsync("Welcome to the Occurrences Finder Program" + Environment.NewLine);
+
+        Func<Task> action = await RunMenu();
+        await action();
+    }
+
+    private async Task<Func<Task>> RunMenu()
+    {
+        Func<Task>? action;
+
+        do
+        {
+            await output.WriteLineAsync("What do you want to do ?");
+            await output.WriteLineAsync("1 - Count Occurrences of a webpage");
+            await output.WriteLineAsync("2 - Show saved requests");
+            await output.WriteLineAsync();
+            await output.WriteAsync("Write your choice : ");
+
+            string? userChoice = await input.ReadLineAsync();
+            action = userChoice switch
+            {
+                "1" => FindOccurrences,
+                "2" => DisplaySavedResults,
+                _ => null
+            };
+
+            if (action == null)
+                await output.WriteLineAsync("Your choice is invalid." + Environment.NewLine);
+        } while (action == null);
+
+        return action;
     }
 
     private async Task FindOccurrences()
@@ -69,5 +98,12 @@ public class Application
         } while (word == null);
 
         return word;
+    }
+
+    private async Task DisplaySavedResults()
+    {
+        await output.WriteLineAsync();
+        await output.WriteLineAsync("This is under development");
+        await output.WriteLineAsync();
     }
 }
