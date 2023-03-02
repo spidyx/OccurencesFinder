@@ -18,4 +18,9 @@ public class LocalFileRecordsRepository : IRecordsRepository
         string json = JsonSerializer.Serialize(newRecord);
         await File.AppendAllLinesAsync(localFilePath, new []{json});
     }
+
+    public Task<IEnumerable<CountWordRecord>> GetRecords()
+    {
+        throw new NotImplementedException();
+    }
 }
