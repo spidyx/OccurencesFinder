@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Infrastructure.UnitTests", "OccurrencesFinder.Infrastructure.UnitTests\OccurrencesFinder.Infrastructure.UnitTests.csproj", "{D2021246-AD81-4D03-A9D8-07A9FE53EF58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Domain.UnitTests", "OccurrencesFinder.Domain.UnitTests\OccurrencesFinder.Domain.UnitTests.csproj", "{546B2CC0-2F1C-418E-8ECC-86C623FCA9A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Domain", "OccurrencesFinder.Domain\OccurrencesFinder.Domain.csproj", "{D95D64D3-677A-4E0B-9970-D704EFCBC759}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546B2CC0-2F1C-418E-8ECC-86C623FCA9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546B2CC0-2F1C-418E-8ECC-86C623FCA9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546B2CC0-2F1C-418E-8ECC-86C623FCA9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546B2CC0-2F1C-418E-8ECC-86C623FCA9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95D64D3-677A-4E0B-9970-D704EFCBC759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95D64D3-677A-4E0B-9970-D704EFCBC759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95D64D3-677A-4E0B-9970-D704EFCBC759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95D64D3-677A-4E0B-9970-D704EFCBC759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
