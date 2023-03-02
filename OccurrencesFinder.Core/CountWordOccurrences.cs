@@ -1,6 +1,6 @@
 ﻿namespace OccurrencesFinder.Core;
 
-public class CountWordOccurrences
+public class CountWordOccurrences : ICountWordOccurrences
 {
     private readonly IHttpLoader loader;
     private readonly RegexpParser parser = new();

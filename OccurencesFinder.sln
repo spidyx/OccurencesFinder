@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Core.Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.IntegrationTestServer", "OccurrencesFinder.IntegrationTestServer\OccurrencesFinder.IntegrationTestServer.csproj", "{E93962DE-2851-4E1A-A7FD-4B360AEDAB42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console", "OccurrencesFinder.Console\OccurrencesFinder.Console.csproj", "{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console.UnitTest", "OccurrencesFinder.Console.UnitTest\OccurrencesFinder.Console.UnitTest.csproj", "{3E8CB816-F90E-456B-9DE2-D329B5638AAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{E93962DE-2851-4E1A-A7FD-4B360AEDAB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93962DE-2851-4E1A-A7FD-4B360AEDAB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93962DE-2851-4E1A-A7FD-4B360AEDAB42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
