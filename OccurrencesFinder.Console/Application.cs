@@ -76,7 +76,7 @@ public class Application
 
         await output.WriteLineAsync("Do you want to save it ? (y/n)");
 
-        await SaveCount(word, count);
+        await SaveCount(word, count, uri);
     }
 
     private async Task<Uri> GetInputForUri()
@@ -116,12 +116,12 @@ public class Application
         return word;
     }
 
-    private async Task SaveCount(string word, int count)
+    private async Task SaveCount(string word, int count, Uri uri)
     {
         bool shouldSave = await GetUserChoice();
 
         if (shouldSave)
-            await saveCountingRecord.Execute(word, count);
+            await saveCountingRecord.Execute(word, count, uri);
     }
 
     private async Task<bool> GetUserChoice()
@@ -149,8 +149,9 @@ public class Application
         IEnumerable<CountWordRecord> records = await listCountingRecords.Execute();
         foreach (CountWordRecord record in records)
         {
+            string date = record.DateTime.ToLocalTime().ToString("f");
             await output.WriteLineAsync(
-                $"{record.DateTime.ToLocalTime().ToShortTimeString()} - The word {record.Word} have been found {record.Count}.");
+                $"{date} - The word {record.Word} have been found \"{record.Count}\" at {record.uri}.");
         }
     }
 }

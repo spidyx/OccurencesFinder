@@ -14,9 +14,9 @@ public class SaveCountingRecord : ISaveCountingRecord
         this.recordsRepository = recordsRepository;
     }
 
-    public async Task Execute(string word, int count)
+    public async Task Execute(string word, int count, Uri uri)
     {
-        CountWordRecord newRecord = new(dateTimeProvider.GetUTCNow(), word, count);
+        CountWordRecord newRecord = new(dateTimeProvider.GetUTCNow(), word, count, uri);
         await recordsRepository.SaveNewRecord(newRecord);
     }
 }

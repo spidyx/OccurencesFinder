@@ -2,5 +2,5 @@
 
 public interface ISaveCountingRecord
 {
-    Task Execute(string word, int count);
+    Task Execute(string word, int count, Uri uri);
 }
