@@ -1,4 +1,4 @@
-﻿using OccurrencesFinder.Core;
+﻿using OccurrencesFinder.Application.UseCases.CountWordUseCase;
 
 namespace OccurrencesFinder.Console;
 

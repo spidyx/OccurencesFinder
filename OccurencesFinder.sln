@@ -2,15 +2,19 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.PoC", "OccurrencesFinder.PoC\OccurrencesFinder.PoC.csproj", "{7405E5B6-B967-40A6-9906-B761F121F999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Core", "OccurrencesFinder.Core\OccurrencesFinder.Core.csproj", "{5841DC87-5098-46A9-9531-9A2EE57A772E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Application", "OccurrencesFinder.Application\OccurrencesFinder.Application.csproj", "{5841DC87-5098-46A9-9531-9A2EE57A772E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Core.UnitTests", "OccurrencesFinder.Core.UnitTests\OccurrencesFinder.Core.UnitTests.csproj", "{770902BC-6752-4174-AA3A-FC91AB35229A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Application.UnitTests", "OccurrencesFinder.Application.UnitTests\OccurrencesFinder.Application.UnitTests.csproj", "{770902BC-6752-4174-AA3A-FC91AB35229A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.IntegrationTestServer", "OccurrencesFinder.IntegrationTestServer\OccurrencesFinder.IntegrationTestServer.csproj", "{E93962DE-2851-4E1A-A7FD-4B360AEDAB42}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console", "OccurrencesFinder.Console\OccurrencesFinder.Console.csproj", "{81C1B1DE-A61E-44CF-B00B-59DF81A3121B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Console.UnitTest", "OccurrencesFinder.Console.UnitTest\OccurrencesFinder.Console.UnitTest.csproj", "{3E8CB816-F90E-456B-9DE2-D329B5638AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Infrastructure", "OccurrencesFinder.Infrastructure\OccurrencesFinder.Infrastructure.csproj", "{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccurrencesFinder.Infrastructure.UnitTests", "OccurrencesFinder.Infrastructure.UnitTests\OccurrencesFinder.Infrastructure.UnitTests.csproj", "{D2021246-AD81-4D03-A9D8-07A9FE53EF58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +46,13 @@ Global
 		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E8CB816-F90E-456B-9DE2-D329B5638AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E47371F-88AB-41EE-A6A1-1AA401E9A1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2021246-AD81-4D03-A9D8-07A9FE53EF58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

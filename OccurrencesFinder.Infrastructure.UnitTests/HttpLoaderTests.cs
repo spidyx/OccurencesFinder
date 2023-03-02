@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 
-namespace OccurrencesFinder.Core.UnitTests;
+namespace OccurrencesFinder.Infrastructure.UnitTests;
 
 public class HttpLoaderTests
 {

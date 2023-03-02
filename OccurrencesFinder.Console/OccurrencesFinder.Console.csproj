@@ -9,7 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OccurrencesFinder.Core\OccurrencesFinder.Core.csproj" />
+      <ProjectReference Include="..\OccurrencesFinder.Application\OccurrencesFinder.Application.csproj" />
+      <ProjectReference Include="..\OccurrencesFinder.Infrastructure\OccurrencesFinder.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>

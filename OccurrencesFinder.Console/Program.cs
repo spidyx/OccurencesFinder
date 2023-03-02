@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OccurrencesFinder.Console;
-using OccurrencesFinder.Core;
+using OccurrencesFinder.Application.Interfaces;
+using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+using OccurrencesFinder.Infrastructure;
 
 await using ServiceProvider serviceProvider = new ServiceCollection()
     .AddHttpClient()

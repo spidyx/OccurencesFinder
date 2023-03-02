@@ -1,4 +1,6 @@
-﻿namespace OccurrencesFinder.Core;
+﻿using OccurrencesFinder.Application.Interfaces;
+
+namespace OccurrencesFinder.Infrastructure;
 
 public class HttpLoader : IHttpLoader
 {

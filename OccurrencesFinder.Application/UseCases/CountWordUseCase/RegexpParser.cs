@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace OccurrencesFinder.Core;
+namespace OccurrencesFinder.Application.UseCases.CountWordUseCase;
 
 public class RegexpParser
 {

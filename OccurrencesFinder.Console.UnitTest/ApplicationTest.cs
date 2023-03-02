@@ -1,7 +1,7 @@
 using System.Text;
 using FluentAssertions;
 using Moq;
-using OccurrencesFinder.Core;
+using OccurrencesFinder.Application.UseCases.CountWordUseCase;
 
 namespace OccurrencesFinder.Console.UnitTest;
 

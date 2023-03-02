@@ -1,4 +1,6 @@
-﻿namespace OccurrencesFinder.Core;
+﻿using OccurrencesFinder.Application.Interfaces;
+
+namespace OccurrencesFinder.Application.UseCases.CountWordUseCase;
 
 public class CountWordOccurrences : ICountWordOccurrences
 {

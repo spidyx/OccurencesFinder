@@ -1,4 +1,6 @@
-namespace OccurrencesFinder.Core.UnitTests;
+using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+
+namespace OccurrencesFinder.Application.UnitTests;
 
 public class RegexpParserTests
 {

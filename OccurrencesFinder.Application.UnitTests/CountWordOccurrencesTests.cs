@@ -1,4 +1,7 @@
-﻿namespace OccurrencesFinder.Core.UnitTests;
+﻿using OccurrencesFinder.Application.Interfaces;
+using OccurrencesFinder.Application.UseCases.CountWordUseCase;
+
+namespace OccurrencesFinder.Application.UnitTests;
 
 public class CountWordOccurrencesTests
 {
